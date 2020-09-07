@@ -13,7 +13,7 @@ const openingTimesSchema = new mongoose.Schema({
   }
 });
 
-const reviewSchema = new mongoose.Schema({
+const   reviewSchema = new mongoose.Schema({
   author: String,
   rating: {
     type: Number,

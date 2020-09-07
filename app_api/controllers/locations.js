@@ -13,7 +13,7 @@ const locationsListByDistance = async (req, res) => {
     key: 'coords',
     spherical: true,
     maxDistance: 20000,
-    limit: 10
+    $limit: 10
   };
   if (!lng || !lat) {
     return res
@@ -37,7 +37,7 @@ const locationsListByDistance = async (req, res) => {
         address: result.address,
         rating: result.rating,
         facilities: result.facilities,
-        distance: `${result.distance.calculated.toFixed()}m`
+        distance: `${result.distance.calculated.toFixed()}`
       }
     });
     res
