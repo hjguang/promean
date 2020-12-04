@@ -3,6 +3,9 @@ const router = express.Router();
 const ctrlLocations = require('../controllers/locations');
 // const ctrlReviews = require('../controllers/reviews');
 
+const userApiController = require('../controllers/UserApiController')
+
+
 // locations
 router
   .route('/locations')
@@ -25,5 +28,16 @@ router
 //   .get(ctrlReviews.reviewsReadOne)
 //   .put(ctrlReviews.reviewsUpdateOne)
 //   .delete(ctrlReviews.reviewsDeleteOne);
+
+
+
+router
+    .route('/user/create')
+    .post(userApiController.userCreate);
+router.get('/user/list', userApiController.userList)
+
+router.get('/', function(req, res, next) {
+    res.send('respond with a resource');
+});
 
 module.exports = router;
